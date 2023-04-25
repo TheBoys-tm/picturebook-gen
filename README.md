@@ -10,11 +10,11 @@ The first step in the project is to collect the pages from the book. This can be
 
 ### Text Analysis
 
-Next, we will analyze the text on each page using NLP techniques. We will use a pre-trained NLP model, such as GPT-3, to analyze the text and extract the important parts of the text. Once we have identified the important text, we can convert it into something that midjourney AI can understand.
+Next, we will analyze the text on each page using NLP techniques. We will use a pre-trained NLP model, such as GPT-3, to analyze the text and extract the important parts of the text. Once we have identified the important text, we can convert it into something that [text to image api] AI can understand.
 
 ### Image Generation
 
-The final step is to generate images based on the important text extracted from the book pages. We will use Computer Vision techniques to generate images based on the text. We will be using GPT3.5 to generate prompts for Midjourney to execute.
+The final step is to generate images based on the important text extracted from the book pages. We will use Computer Vision techniques to generate images based on the text. We will be using GPT3.5 to generate prompts for [text to image api] to execute.
 
 ## Technologies and Packages
 
@@ -24,7 +24,7 @@ Here are some technologies and packages that can be used for the project:
 
 - Programming Language: Python
 - NLP Libraries: GPT-3
-- Computer Vision Libraries: Midjourney
+- Computer Vision Libraries: [text to image api]
 - OCR Libraries: Tesseract OCR
 - Web Framework: Flask
 - Database: SQLite
