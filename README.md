@@ -20,6 +20,8 @@ The final step is to generate images based on the important text extracted from 
 
 Here are some technologies and packages that can be used for the project:
 
+(bound to change)
+
 - Programming Language: Python
 - NLP Libraries: GPT-3
 - Computer Vision Libraries: Midjourney
