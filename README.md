@@ -23,7 +23,7 @@ Here are some technologies and packages that can be used for the project:
 (bound to change)
 
 - Programming Language: Python
-- NLP Libraries: GPT-3
+- NLP Libraries: GPT-4
 - Computer Vision Libraries: [text to image api]
 - OCR Libraries: Tesseract OCR
 - Web Framework: Flask
