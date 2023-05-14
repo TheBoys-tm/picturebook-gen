@@ -17,7 +17,7 @@ build/
 .idea/
 docs/_build/
 .vscode
-keys.py
+config.py
 
 # Coverage reports
 htmlcov/
