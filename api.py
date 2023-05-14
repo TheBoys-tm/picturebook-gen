@@ -1,11 +1,11 @@
 import openai
-import time
+import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(".env")
 
-openai.api_key = OPENAI_API_KEY
-openai.organization = OPENAI_ORG_KEY
+openai.api_key = os.environ["GPT4_API_KEY"]
+openai.organization = os.environ["GPT4_ORG_ID"]
 
 def make_query(query: str):
     """
@@ -14,7 +14,8 @@ def make_query(query: str):
     Args:
         query (str): Query to be made to GPT4
     Returns:
-        str: Response from GPT4"""
+        str: Response from GPT4
+    """
     reso = openai.Completion.create(
         engine="davinci",
         prompt=query,
@@ -25,5 +26,6 @@ def make_query(query: str):
         presence_penalty=0.0,
         stop=["\n", "Human:", "AI:"]
     )
+    print(reso.choices[0])
     return reso.choices[0].text
 

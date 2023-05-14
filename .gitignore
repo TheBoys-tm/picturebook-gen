@@ -1,5 +1,4 @@
 .DS_Store
-.env
 .flaskenv
 *.pyc
 *.pyo
@@ -17,7 +16,8 @@ build/
 .idea/
 docs/_build/
 .vscode
-config.py
+.env
+*.env
 
 # Coverage reports
 htmlcov/

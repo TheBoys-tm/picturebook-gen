@@ -32,3 +32,20 @@ Here are some technologies and packages that can be used for the project:
 ## Github Integration
 
 To keep track of the project and collaborate with others, we will use Github. We will create a Github repository for the project and use Git for version control. We will also use Github Issues to track tasks and milestones, and Github Actions for continuous integration and deployment.
+
+## Getting Started
+
+First, clone the repository:
+    git clone git@github.com:LLRHook/picturebook-gen.git
+
+Then create a virtual environment:
+    cd repo_name
+    python3 -m venv venv
+
+Activate the environment:
+    .\venv\Scripts\activate
+
+Install the required packages: 
+    pip install -r requirements.txt
+
+Then set up the environment variables in the .env file
