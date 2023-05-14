@@ -6,7 +6,7 @@ export default function Home() {
     <div className={styles.container}>
       {/* Left card with image display */}
       <div className={styles.card}>
-        <img src="kia.png" alt="Placeholder Kia" />
+        <img src="/app/static/kia.png" alt="Placeholder Kia" />
       </div>
 
       {/* Right card with text area */}
