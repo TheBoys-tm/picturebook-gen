@@ -16,7 +16,11 @@ build/
 .idea/
 docs/_build/
 .vscode
+<<<<<<< HEAD:backend/.gitignore
 .env
+=======
+config.py
+>>>>>>> 58370571641bc9c7460c8cb1d0cb606f6e86cf77:.gitignore
 
 # Coverage reports
 htmlcov/
