@@ -23,7 +23,7 @@ Here are some technologies and packages that can be used for the project:
 (bound to change)
 
 - Programming Language: Python
-- NLP Libraries: GPT-3
+- NLP Libraries: GPT-4
 - Computer Vision Libraries: [text to image api]
 - OCR Libraries: Tesseract OCR
 - Web Framework: Flask
@@ -48,4 +48,5 @@ Activate the environment:
 Install the required packages: 
     pip install -r requirements.txt
 
+Then set up the environment variables in the .env file
 Then set up the environment variables in the .env file
