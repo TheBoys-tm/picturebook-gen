@@ -49,4 +49,3 @@ Install the required packages:
     pip install -r requirements.txt
 
 Then set up the environment variables in the .env file
-Then set up the environment variables in the .env file
