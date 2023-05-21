@@ -1,6 +1,6 @@
 from api import get_main_text, text_to_SD
 
-filename = 'tests/text.txt'
+filename = 'test/text.txt'
 def read_file_as_string(filename):
     with open(filename, 'r', encoding='utf-8') as file:
         data = file.read()
