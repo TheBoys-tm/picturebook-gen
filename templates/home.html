@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Picture Book Generator</title>
+    <link rel="stylesheet" type="text/css" href="static\css\style.css">
+</head>
+<body>
+    <h1>Picture Book Generator</h1>
+    <div id="main-container">
+        <div id="input-container">
+            <textarea id="prompt-text" placeholder="Enter your prompt here"></textarea>
+            <button id="submit-button">Generate Image</button>
+        </div>
+        <div id="output-container">
+            <div id="image-box"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='resources/home.js') }}"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@ load_dotenv(".env")
 
 openai.api_key = os.environ["GPT4_API_KEY"]
 openai.organization = os.environ["GPT4_ORG_ID"]
-
+print("just a check", openai.api_key, openai.organization)
 def get_main_text(query: str) -> str:
     """
     Description:
@@ -54,3 +54,4 @@ def text_to_SD(text: str) -> str:
     response = requests.request("POST", url, headers=headers, data=payload)
 
     return response.json()['output'][0]
+
