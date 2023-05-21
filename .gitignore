@@ -24,3 +24,8 @@ htmlcov/
 .coverage
 .coverage.*
 *,cover
+
+/node_modules
+frontend/litpics/.next/
+frontend/litpics/.vercel/
+frontend/litpics/node_modules/
