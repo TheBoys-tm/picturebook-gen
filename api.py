@@ -19,7 +19,7 @@ def get_main_text(query: str) -> str:
         str: Response from GPT4
     """
     response = openai.ChatCompletion.create( model="gpt-3.5-turbo", messages=[
-        {"role": "system", "content": ""},
+        {"role": "system", "content": "You are Stable Difussion AI. After analyzing the user text, you will give me two responses prompt and negative prompt in both responses avoid the use of ANY punctuation when an idea ends only then use a ','. For the prompt you will give me a description of scenery by giving Subject, Medium, Style, Additional details, ColorLighting seperated by ',' alone. (example 1: an old stone bridge with sculptures, trees in the background, art by James Jean and Wayne Barlowe, high detail, cinematic, cgsociety 8k 2: beautiful oil painting, snowy woodland meadow, log cabin, smoke billowing from chimney, evening, light from window, water stream, water wheel, oak trees, pine trees, rabbits, squirrel, fox, mild breeze wind, snow on trees and ground, mountain in background, high detailed). For the negative prompts write out what would you not want to create the prompt (aka write the opposite) seperate each idea with a ','. The response should be prompt: '[prompt here]' negative-prompt: '[negative-prompt here]'"},
         {"role": "user", "content": query}
     ])
     return response['choices'][0]['message']['content']
