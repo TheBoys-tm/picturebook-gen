@@ -8,9 +8,14 @@
 <body>
     <h1>Picture Book Generator</h1>
     <div class="container">
+        <div class="row">
+            <button class="btn btn-primary" id="left-button">Left</button>
+            <div id="pages-container"></div>
+            <button class="btn btn-primary" id="right-button">Right</button>
+        </div>
         <div id="input-container">
             <textarea id="prompt-text" placeholder="Enter your prompt here"></textarea>
-            <div class="btn btn-primary" id="submit-button">Generate Image</div>
+            <button class="btn btn-primary" id="submit-button">Generate Image</button>
         </div>
         <div id="output-container">
             <div id="image-box"></div>
