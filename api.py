@@ -34,7 +34,7 @@ def text_to_SD(text: str) -> str:
     "width": "512",
     "height": "512",
     "samples": "1",
-    "num_inference_steps": "64",
+    "num_inference_steps": "32",
     "seed": None,
     "guidance_scale": 15,
     "safety_checker": "yes",
