@@ -8,7 +8,7 @@ load_dotenv(".env")
 
 openai.api_key = os.environ["GPT4_API_KEY"]
 openai.organization = os.environ["GPT4_ORG_ID"]
-print("just a check", openai.api_key, openai.organization)
+
 def get_main_text(query: str) -> str:
     """
     Description:
@@ -18,8 +18,8 @@ def get_main_text(query: str) -> str:
     Returns:
         str: Response from GPT4
     """
-    response = openai.ChatCompletion.create( model="gpt-4", messages=[
-        {"role": "system", "content": "You are a describer ai, you will take a whole page of text and take the most important part of it. Then in your own way describe the scene like you would a scene from a book, try to keep it to 1 sentence but you can go to 2 if needed."},
+    response = openai.ChatCompletion.create( model="gpt-3.5-turbo", messages=[
+        {"role": "system", "content": ""},
         {"role": "user", "content": query}
     ])
     return response['choices'][0]['message']['content']
@@ -34,9 +34,9 @@ def text_to_SD(text: str) -> str:
     "width": "512",
     "height": "512",
     "samples": "1",
-    "num_inference_steps": "20",
+    "num_inference_steps": "64",
     "seed": None,
-    "guidance_scale": 7.5,
+    "guidance_scale": 15,
     "safety_checker": "yes",
     "multi_lingual": "no",
     "panorama": "no",
@@ -53,5 +53,8 @@ def text_to_SD(text: str) -> str:
 
     response = requests.request("POST", url, headers=headers, data=payload)
 
-    return response.json()['output'][0]
+    if response.json()['output'][0]:
+        return response.json()['output'][0]
+    
+    return 
 

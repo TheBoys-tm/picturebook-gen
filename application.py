@@ -10,9 +10,9 @@ def home():
 @app.route('/generate-image', methods=['POST'])
 def generate_image():
     prompt = request.json['prompt']
-    print(prompt)
     # Call the functions from api.py to generate the image
     main_text = get_main_text(prompt)
+    print(main_text)
     image = text_to_SD(main_text)
 
     # Return the image URL as a response

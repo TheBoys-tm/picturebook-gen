@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             // Display the generated image
+            console.log(data)
             const imageUrl = data.image_url;
-            imageBox.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
+            imageBox.innerHTML = `<img id="SDimg" src="${imageUrl}" alt="Generated Image" height="90%" width="90%">`;
         })
         .catch(error => {
             console.error('Error:', error);
