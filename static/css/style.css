@@ -10,7 +10,7 @@ h1 {
     padding: 20px 0;
 }
 
-#main-container {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,3 +87,8 @@ button:hover {
     object-fit: cover;
 }
 
+#submit-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
