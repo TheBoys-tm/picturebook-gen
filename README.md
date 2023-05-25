@@ -49,3 +49,12 @@ Install the required packages:
     pip install -r requirements.txt
 
 Then set up the environment variables in the .env file
+
+## Features to add: 
+
+- add new page button
+- better proompting
+- database for storing images and corresponding prompts
+    - accounts 
+    - session data storage
+- PDF to text -> uploading a book
