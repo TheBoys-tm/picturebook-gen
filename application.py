@@ -9,14 +9,7 @@ def home():
 
 @app.route('/generate-image', methods=['POST'])
 def generate_image():
-    prompt = request.json['prompt']
-
-    main_text = get_main_text(prompt)
-    print(main_text)
-    image = text_to_SD(main_text)
-    print('Done image')
-
-    return jsonify({'image_url': image})
+    return jsonify({'image_url': text_to_SD(get_main_text(request.json['prompt']))})
 
 if __name__ == '__main__':
     app.run()

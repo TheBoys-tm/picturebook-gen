@@ -45,8 +45,5 @@ def text_to_SD(text: str) -> str:
 
     response = requests.request("POST", url, headers=headers, data=payload)
 
-    if response.json()['output'][0]:
-        return response.json()['output'][0]
-    
-    return 
+    return response.json()['output'][0]
 
