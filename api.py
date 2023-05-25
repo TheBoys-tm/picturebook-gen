@@ -28,7 +28,7 @@ def text_to_SD(text: str) -> str:
     "samples": "1",
     "num_inference_steps": "20",
     "seed": None,
-    "guidance_scale": 15,
+    "guidance_scale": 7.5,
     "safety_checker": "yes",
     "multi_lingual": "no",
     "panorama": "no",

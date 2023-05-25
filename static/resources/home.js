@@ -1,6 +1,7 @@
 jQuery(function ($) {
     $(document).ready(function () {
         let submit = document.getElementById('submit');
+        let newPage = document.getElementById('new-page');
         let image = document.getElementById('image');
         let promptText = document.getElementById('user-prompt');
         let leftButton = document.getElementById('left-button');
@@ -9,6 +10,16 @@ jQuery(function ($) {
 
         let pages = [];
         let currentPageIndex = 0;
+
+        newPage.addEventListener('click', function() {
+            let saved_prompt = '';
+            let image_url = '';
+
+            pages.push({
+                saved_prompt,
+                image_url
+            });
+        });
 
         submit.addEventListener('click', function () {
             loading();
@@ -23,7 +34,7 @@ jQuery(function ($) {
                 success: function (data) {
                     let image_url = data.image_url;
                     let saved_prompt = promptText.value.trim();
-
+                    
                     pages.push({
                         saved_prompt,
                         image_url
@@ -55,7 +66,7 @@ jQuery(function ($) {
 
         function loading() {
             submit.classList.add('disabled');
-            submit.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only"> Generating...</span>`
+            submit.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only"> Generating...</span>`;
         }
 
         function doneLoading() {
@@ -65,7 +76,7 @@ jQuery(function ($) {
 
         function updateUI() {
             let currentPage = pages[currentPageIndex];
-            promptText.value = currentPage.saved_prompt;
+            promptText.ariaPlaceholder = currentPage.saved_prompt;
             image.innerHTML = `<span class="helper"></span><img id="SDimg" src="${currentPage.image_url}" height="100%" width="100%" style="display: inline-block; vertical-align: middle;">`;
             updatePagesContainer();
         }
