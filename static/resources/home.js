@@ -19,6 +19,7 @@ jQuery(function ($) {
                 saved_prompt,
                 image_url
             });
+            updateUI();
         });
 
         submit.addEventListener('click', function () {
@@ -35,6 +36,7 @@ jQuery(function ($) {
                     let image_url = data.image_url;
                     let saved_prompt = promptText.value.trim();
                     
+
                     pages.push({
                         saved_prompt,
                         image_url
@@ -65,18 +67,24 @@ jQuery(function ($) {
         });
 
         function loading() {
-            submit.classList.add('disabled');
+            let btns = document.getElementsByClassName('btn')
+            for (let btn in btns) {
+                btn.classList.add('disabled');
+            }
             submit.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only"> Generating...</span>`;
         }
 
         function doneLoading() {
-            submit.classList.remove('disabled');
+            let btns = document.getElementsByClassName('btn')
+            for (let btn in btns) {
+                btn.classList.remove('disabled');
+            }
             submit.innerHTML = `Generate Image`;
         }
 
         function updateUI() {
             let currentPage = pages[currentPageIndex];
-            promptText.ariaPlaceholder = currentPage.saved_prompt;
+            promptText.value = currentPage.saved_prompt;
             image.innerHTML = `<span class="helper"></span><img id="SDimg" src="${currentPage.image_url}" height="100%" width="100%" style="display: inline-block; vertical-align: middle;">`;
             updatePagesContainer();
         }
