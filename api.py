@@ -11,7 +11,7 @@ openai.organization = os.environ["GPT4_ORG_ID"]
 
 def get_main_text(query: str) -> str:
     response = openai.ChatCompletion.create( model="gpt-3.5-turbo", messages=[
-        {"role": "system", "content": "Tell me the in depth description of the scenery in this order and seperated by commas (keep it up to 5 words per topic): Style, Subject, Medium, Color, Lighting. Keep in mind the audience of the story chilren want light and bright while adults want darker."},
+        {"role": "system", "content": "We want to take this passage and try to draw it by writing a prompt to a generative ai called stable diffusion, the prompt should be written in this order and seperated by commas (keep it up to 5 words per topic): Setting/Person, Style of the desired image, Subject, Medium, Color, Lighting"},
         {"role": "user", "content": query}
     ])
     return response['choices'][0]['message']['content']
