@@ -19,6 +19,9 @@ jQuery(function ($) {
                 saved_prompt,
                 image_url
             });
+
+            pages[currentPageIndex].saved_prompt = promptText.value.trim() != '' ? promptText.value.trim() : '';
+            currentPageIndex = pages.length - 1;
             updateUI();
         });
 
@@ -36,13 +39,19 @@ jQuery(function ($) {
                     let image_url = data.image_url;
                     let saved_prompt = promptText.value.trim();
                     
-
-                    pages.push({
-                        saved_prompt,
-                        image_url
-                    });
-                    currentPageIndex = pages.length - 1;
-
+                    if(pages[currentPageIndex] != undefined && pages[currentPageIndex].image_url != '') {
+                        pages.push({
+                            saved_prompt,
+                            image_url
+                        });    
+                        currentPageIndex = pages.length - 1;
+                    } else {
+                        pages[currentPageIndex] = {
+                            saved_prompt,
+                            image_url
+                        };
+                    }
+                    
                     doneLoading();
                     updateUI();
                 },
@@ -53,6 +62,7 @@ jQuery(function ($) {
         });
 
         leftButton.addEventListener('click', () => {
+            pages[currentPageIndex].saved_prompt = promptText.value.trim() != '' ? promptText.value.trim() : '';
             if (currentPageIndex > 0) {
                 currentPageIndex--;
                 updateUI();
@@ -60,6 +70,7 @@ jQuery(function ($) {
         });
 
         rightButton.addEventListener('click', () => {
+            pages[currentPageIndex].saved_prompt = promptText.value.trim() != '' ? promptText.value.trim() : '';
             if (currentPageIndex < pages.length - 1) {
                 currentPageIndex++;
                 updateUI();
@@ -68,7 +79,7 @@ jQuery(function ($) {
 
         function loading() {
             let btns = document.getElementsByClassName('btn')
-            for (let btn in btns) {
+            for (let btn of btns) {
                 btn.classList.add('disabled');
             }
             submit.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only"> Generating...</span>`;
@@ -76,7 +87,7 @@ jQuery(function ($) {
 
         function doneLoading() {
             let btns = document.getElementsByClassName('btn')
-            for (let btn in btns) {
+            for (let btn of btns) {
                 btn.classList.remove('disabled');
             }
             submit.innerHTML = `Generate Image`;
@@ -93,12 +104,13 @@ jQuery(function ($) {
             pagesContainer.innerHTML = '';
 
             for (let i = 0; i < pages.length; i++) {
-                pagesContainer.innerHTML += `<button class="btn btn-primary page-number ${i === currentPageIndex ? 'active' : ''}">${i + 1}</button>`;
+                pagesContainer.innerHTML += `<button class="btn btn-primary page-number id= "page_${i}" ${i === currentPageIndex ? 'active' : ''}">${i + 1}</button>`;
             }
 
             let pageNumbers = pagesContainer.getElementsByClassName('page-number');
             for (let i = 0; i < pageNumbers.length; i++) {
                 pageNumbers[i].addEventListener('click', () => {
+                    pages[currentPageIndex].saved_prompt = promptText.value.trim() != '' ? promptText.value.trim() : '';
                     currentPageIndex = i;
                     updateUI();
                 });
